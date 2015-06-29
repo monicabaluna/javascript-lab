@@ -44,7 +44,6 @@
       //   titlu.style.display = "block";
     }
 
-    // console.log(buton)
 
     // Genereaza doua liste din 2 arrayuri
     var list1 = ["LT", "BG", "MZ"];
@@ -66,6 +65,24 @@
       myLi.appendChild(myText);
       myList2.appendChild(myLi);
     }
+
+    var interschimba = function(event) {
+      if(event.currentTarget.parentNode.id === "list1")
+        var myList = document.getElementById("list2");
+      else
+        var myList = document.getElementById("list1");
+      myList.appendChild(event.currentTarget);
+    }
+
+    var list1 = document.getElementById("list1").getElementsByTagName("li");
+    for(var i = 0; i < list1.length; i++) {
+      var x = list1[i].addEventListener("click", interschimba);
+    } 
+    var list2 = document.getElementById("list2").getElementsByTagName("li");
+    for(var i = 0; i < list2.length; i++) {
+      var x = list2[i].addEventListener("click", interschimba);
+    }
+
 
     // Exercitii
     // 0. sa faceti acelasi lucru pentru myList2
