@@ -30,15 +30,18 @@
     var buton = document.getElementById("butonulMeu");
     buton.onclick = function() {
       // console.log("am dat click");
-      ascundeButon()
+      schimbaTitluButon()
     }
 
-    var ascundeButon = function() {
+    var schimbaTitluButon = function() {
       var titlu = document.getElementById("titlu");
-      if (titlu.style.display == "block")
-        titlu.style.display = "none";
-      else
-        titlu.style.display = "block";
+      x = document.getElementById("myInput")
+      // console.log(x.value);
+      titlu.innerHTML = x.value;
+      // if (titlu.style.display == "block")
+      //   titlu.style.display = "none";
+      // else
+      //   titlu.style.display = "block";
     }
 
     // console.log(buton)
@@ -53,6 +56,15 @@
       var myText = document.createTextNode(list1[i]);
       myLI.appendChild(myText);
       myList1.appendChild(myLI)
+    }
+
+    var myList2 = document.getElementById("list2");
+    // console.log(list2.length);
+    for (var i=0; i<list2.length;i++){
+      var myLi = document.createElement('li');
+      var myText = document.createTextNode(list2[i]);
+      myLi.appendChild(myText);
+      myList2.appendChild(myLi);
     }
 
     // Exercitii
